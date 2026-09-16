@@ -1,0 +1,33 @@
+﻿project:
+  name: "argo-ocean-monitoring"
+  version: "0.1.0"
+
+paths:
+  raw: "data/raw"
+  processed: "data/processed"
+  mart: "data/mart"
+  logs: "logs"
+
+sources:
+  static:
+    name: "Otter21/ARGO_Profiles"
+    url: "https://huggingface.co/datasets/Otter21/ARGO_Profiles"
+    format: "csv"
+  dynamic:
+    name: "Argovis API"
+    base_url: "https://argovis-api.colorado.edu/argo"
+    docs_url: "https://argovis-api.colorado.edu/docs/"
+    format: "json"
+    max_profiles_per_request: 1000
+    default_window_days: 3
+
+quality:
+  required_fields:
+    - "_id"
+    - "timestamp"
+    - "geolocation.coordinates"
+    - "basin"
+  ranges:
+    temperature: [-2.0, 40.0]
+    salinity: [0.0, 42.0]
+    pressure: [0.0, 11000.0]

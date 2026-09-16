@@ -1,0 +1,29 @@
+# Виртуальное окружение
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# Данные (тяжёлые, не коммитим)
+data/raw/*
+data/processed/*
+data/mart/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/mart/.gitkeep
+
+# Логи
+logs/*.log
+
+# IDE
+.vscode/
+.idea/
+
+# ОС
+.DS_Store
+Thumbs.db
