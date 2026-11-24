@@ -10,9 +10,14 @@ __pycache__/
 .ipynb_checkpoints/
 
 # Данные (тяжёлые, не коммитим)
-data/raw/*
 data/processed/*
+!data/processed/**
+
 data/mart/*
+!data/mart/**
+
+data/raw/*
+!data/raw/**
 !data/raw/.gitkeep
 !data/processed/.gitkeep
 !data/mart/.gitkeep
